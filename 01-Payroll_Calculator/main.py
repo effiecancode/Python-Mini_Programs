@@ -21,6 +21,3 @@ while is_stop == False:
 
     if q == "no":
         is_stop = True
-
-
-
