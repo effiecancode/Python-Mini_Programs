@@ -5,7 +5,7 @@ my_image = Image.open('confetti-lying-near-present.jpg')
 
 print("current size is: {}".format(my_image.size))
 
-# Define the target size as a tuple
+# Define the target size as a tuple.
 target_size = (1920, 1080)
 
 # Resize the image using a specified resampling filter
