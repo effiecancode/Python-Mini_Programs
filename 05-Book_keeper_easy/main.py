@@ -15,19 +15,25 @@ def get_books():
         book_contents = book_lib.readlines()
         # print(f"{book_contents}")
 
-        if len(book_contents) < 2:
-            print("No books found!")
-            return
+    if len(book_contents) < 2:
+        print("No books found!")
+        return
 
-        title = book_contents[0].strip().split(",")
+    title = book_contents[0].strip().split(",")
 
-        for info in book_contents[1:]:
-            book_info = info.strip().split(",")
-            my_dict = dict(zip(title, book_info))
-            all_books.append(my_dict)
+    for info in book_contents[1:]:
+        book_info = info.strip().split(",")
+        my_dict = dict(zip(title, book_info))
+        all_books.append(my_dict)
 
-        for book_info in all_books:
-            print(book_info)
+    return all_books
+
+def display_books():
+    books_list = get_books()
+
+    for book in books_list:
+        print(book)
+
 
     # for i, line in enumerate(lib_contents, start=1):
     #     print(f"{i}: {line.strip()}")
@@ -48,7 +54,7 @@ def search_book():
 def exit():
     pass
 
-option = int(input(f"\nSelect an action\n \n(1) Add a Book \n(2) Get all Books \n(3) Search a book \n(4) Exit Program \n\nEnter Option: "))
+option = int(input(f"\nSelect an action\n \n(1) Add a Book \n(2) Display Books list \n(3) Search a book \n(4) Exit Program \n\nEnter Option: "))
 print()
 
 # while True:
@@ -56,7 +62,7 @@ if option == 1:
     add_book()
 
 elif option == 2:
-    get_books()
+    display_books()
 
 elif option == 3:
     search_book()
